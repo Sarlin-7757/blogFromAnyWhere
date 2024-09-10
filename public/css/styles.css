@@ -1,33 +1,139 @@
-/* public/css/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     color: #333;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
     padding: 10px;
-    text-align: center;
+    background-color: #ffffff; 
 }
 
 header h1 {
+    font-family: 'Jost', sans-serif;
     margin: 0;
+    color: #000000;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    position: absolute; 
+    left: 20%;
+   
+}
+
+.header-span-blog {
+    font-size: 15px; 
+}
+
+.header-span-fromany {
+    font-size: 10px; 
+}
+
+.header-nav {
+    display: flex;
+    justify-content: center; 
+    width: 100%; 
+}
+
+header nav {
+    display: flex;
+    gap: 35px; 
+    margin: 0 auto; 
 }
 
 header nav a {
-    color: white;
-    margin: 0 15px;
+    font-family: 'Jost', sans-serif;
+    color: black;
     text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
 }
 
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; 
+        align-items: flex-start; 
+        padding: 20px; 
+    }
+
+    header h1 {
+        position: static; 
+        font-size: 24px; 
+        margin-bottom: 20px; 
+    }
+
+    .header-nav {
+        flex-direction: column; 
+        gap: 10px; 
+        width: 100%; 
+        align-items: center; 
+    }
+
+    header nav a {
+        font-size: 14px; 
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px; 
+    }
+
+    .header-span-blog {
+        font-size: 20px; 
+    }
+
+    .header-span-fromany {
+        font-size: 16px; 
+    }
+}
+
+
+
+.cover-photo {
+    position: relative;
+    background-image: url('../assets/coverimg.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    min-height: 90vh; 
+    margin-top: 20px;
+    border-radius: 2px;
+}
+
+.cover-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+.blog-from {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 34px; 
+    margin-bottom: 0;
+}
+
+.anywhere {
+    display: block;
+    font-family: 'Jost', sans-serif;
+    font-size: 70px; 
+    font-weight: bold;
+}
+
+
 .container {
-    width: 80%;
+    max-width: 80%;
     margin: auto;
 }
 
@@ -38,15 +144,68 @@ header nav a {
     margin-top: 20px;
 }
 
-.blog-post {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
+.blog-list-heading {
+    font-family: 'Jost', sans-serif;
+    font-size: 30px;
 }
 
-.blog-post a {
-    color: #333;
-    text-decoration: underline;
+#blogs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: center;
 }
+
+.blog-post {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 400px; 
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #534e4e;
+}
+
+.blog-title {
+    font-family: 'Jost', sans-serif;
+    font-size: 30px;
+    margin: 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.blog-content {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #151515;
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+    white-space: nowrap; 
+}
+
+.read-more {
+    display: inline-block;
+    padding: 10px 15px;
+    font-family: 'Jost', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    background-color: #ef53a9;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more:hover {
+    background-color: #0056b3;
+}
+
 
 .comment {
     background-color: #f9f9f9;
@@ -76,12 +235,18 @@ header nav a {
     background-color: #555;
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
+.footer {
+    height: 30px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(73, 74, 75); 
+    font-size: 14px; 
     bottom: 0;
     width: 100%;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    background-color: rgb(186, 202, 239);
 }
+  
