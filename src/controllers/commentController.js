@@ -2,7 +2,7 @@ import Blog from '../model/blogs.js';
 import Comment from '../model/comment.js';
 
 export const createCommentByTitle = async (req, res) => {
-    const { title } = req.params;  // Use title instead of blogId
+    const { title } = req.params;  
     const { name, email, comment } = req.body;
 
     try {
@@ -18,7 +18,7 @@ export const createCommentByTitle = async (req, res) => {
             name,
             email,
             comment,
-            blog: blog._id  // Use the blog's ObjectId
+            blog: blog._id  
         });
 
         const savedComment = await newComment.save();
