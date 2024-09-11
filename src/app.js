@@ -14,6 +14,12 @@ app.use(morgan("dev"));
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+
+app.use((req, res, next) => {
+    res.setHeader('Cache-Control', 'no-store');
+    next();
+});
+
 app.use(express.static(path.join(__dirname, '../public')));
 
 app.get('/', (req, res) => {

@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const encodedTitle = encodeURIComponent(blog.title);
                 blogElement.innerHTML = `
                     <h3 class="blog-title">${blog.title}</h3>
-                    <p class="blog-content">${blog.content.substring(0, 200)}... </p>
+                    <p class="blog-content">${blog.content.substring(0, 70)} </p>
                     <a href="blog-post.html?title=${encodedTitle}" class="read-more">Read More</a>
                 `;
                 blogsContainer.appendChild(blogElement);

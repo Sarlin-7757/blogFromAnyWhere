@@ -56,6 +56,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 `;
                 document.getElementById('comments').appendChild(newCommentElement);
                 event.target.reset(); // Clear the form
+                
+                const modal = document.getElementById('success-modal');
+                modal.style.display = 'block';
+        
+                // Close the modal on clicking the close button
+                const closeButton = document.querySelector('.close-button');
+                closeButton.onclick = () => {
+                    modal.style.display = 'none';
+                };
+        
+                // Close the modal when the user clicks outside of the modal
+                window.onclick = (event) => {
+                    if (event.target === modal) {
+                        modal.style.display = 'none';
+                    }
+                };
             })
             .catch(error => console.error('Error adding comment:', error));
         });

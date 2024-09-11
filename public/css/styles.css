@@ -3,7 +3,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color:#204541;
     color: #333;
 }
 
@@ -131,6 +131,12 @@ header nav a {
     font-weight: bold;
 }
 
+@media screen and (max-width: 425px) {
+   .anywhere{
+    font-size: 60px;
+   } 
+}
+
 
 .container {
     max-width: 80%;
@@ -138,7 +144,7 @@ header nav a {
 }
 
 .blog-list, .blog-detail {
-    background-color: white;
+    background-color: #fffefa;
     padding: 20px;
     border-radius: 8px;
     margin-top: 20px;
@@ -147,6 +153,7 @@ header nav a {
 .blog-list-heading {
     font-family: 'Jost', sans-serif;
     font-size: 30px;
+    color: #115350;
 }
 
 #blogs {
@@ -157,20 +164,9 @@ header nav a {
     justify-content: center;
 }
 
-.blog-post {
-    background: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    width: 400px; 
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid #534e4e;
-}
 
 .blog-title {
+    color: #a6dcdf;
     font-family: 'Jost', sans-serif;
     font-size: 30px;
     margin: 0;
@@ -181,10 +177,10 @@ header nav a {
 .blog-content {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    color: #151515;
+    color: #e7f1f5;
     overflow: hidden; 
-    text-overflow: ellipsis; 
-    white-space: nowrap; 
+    /* text-overflow: ellipsis;  */
+    /* white-space: nowrap;   */
 }
 
 .read-more {
@@ -192,8 +188,8 @@ header nav a {
     padding: 10px 15px;
     font-family: 'Jost', sans-serif;
     font-size: 14px;
-    color: #fff;
-    background-color: #ef53a9;
+    color: #87b786;
+    background-color: #111f23;
     border: none;
     border-radius: 5px;
     text-align: center;
@@ -203,9 +199,46 @@ header nav a {
 }
 
 .read-more:hover {
-    background-color: #0056b3;
+    background-color: #486e6b;
 }
 
+.blog-post {
+    background: #204f4b;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 400px; 
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #534e4e;
+}
+/* Individual Blog Post */
+
+#blog-title{
+    font-family: 'Jost', sans-serif;
+    font-size: 47px;
+    display: inline-flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+#blog-content{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.indiBlog-comment{
+    margin-top: 80px;
+    font-family: 'Jost', sans-serif;
+    font-size: 25px;
+}
+#comments{
+    font-family: 'Jost', sans-serif;
+    font-weight: 400;
+}
 
 .comment {
     background-color: #f9f9f9;
@@ -214,11 +247,17 @@ header nav a {
     margin-bottom: 10px;
 }
 
+.indiBlog-addComment{
+    font-family: 'Jost', sans-serif;
+    margin-top: 60px;
+    font-size: 25px;
+}
+
 #comment-form input, #comment-form textarea {
-    width: 100%;
+    width: 95%;
     padding: 10px;
     margin: 10px 0;
-    border: 1px solid #ddd;
+    border: 1px solid #383d3b;
     border-radius: 5px;
 }
 
@@ -240,13 +279,51 @@ header nav a {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(73, 74, 75); 
+    color: #fff;
     font-size: 14px; 
     bottom: 0;
     width: 100%;
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
-    background-color: rgb(186, 202, 239);
+    background-color: rgb(44 132 127);
 }
   
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; 
+}
+
+/* Close button */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
